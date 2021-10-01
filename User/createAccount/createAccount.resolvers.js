@@ -1,10 +1,7 @@
-import client from "../client";
 import bcrypt from "bcrypt";
+import client from "../../client";
 
 export default {
-  Query: {
-    getUsers: () => client.user.findMany(),
-  },
   Mutation: {
     createAccount: async (
       _,
@@ -21,7 +18,6 @@ export default {
           };
         }
         const hashPassword = await bcrypt.hash(password, 10);
-
         await client.user.create({
           data: {
             username,
