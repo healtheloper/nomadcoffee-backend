@@ -5,6 +5,8 @@ import { getUser } from "./User/user.utils";
 
 const server = new ApolloServer({
   schema,
+  playground: true,
+  introspection: true,
   context: async ({ req }) => ({
     loggedUser: await getUser(req.headers.auth),
   }),
