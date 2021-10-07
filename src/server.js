@@ -14,5 +14,5 @@ const server = new ApolloServer({
 const PORT = process.env.PORT;
 
 server.listen(PORT).then(() => {
-  console.log(`✅ Server on localhost:${PORT} `);
+  console.log(`✅ Server on localhost:${PORT}`);
 });
